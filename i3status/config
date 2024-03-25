@@ -1,0 +1,44 @@
+general {
+	colors = true
+	interval = 1
+	color_good = "#50fa7b"
+	color_degraded  = "#ffb86c"
+  color_bad = "#ff5555"
+}
+
+order += "cpu_usage"
+order += "battery 0"
+order += "tztime local"
+order += "volume master"
+
+battery 0 {
+	format = " %status %percentage %remaining "
+}
+
+cpu_usage {
+	format = "Aarish Shah Mohsin | CPU: %usage "
+}
+cpu_temperature 0 {
+	format = "%degrees °C"
+}
+tztime local {
+	format = " %d/%m/%Y %H:%M "
+}
+
+
+disk "/" {
+	format = "%avail"
+}
+
+load {
+    format = " %1min"
+}
+
+volume master {
+	format = " ♪ %volume  " 
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+	#S termsyn font
+	#format = "À %volume "
+}
